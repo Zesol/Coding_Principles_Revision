@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Vocabulary Flashcard Test</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Programming Vocabulary Flashcard Test</h1>
+        
+        <!-- User Login Section -->
+        <div class="login-section" id="loginSection">
+            <h2>Enter Your Username</h2>
+            <input type="text" id="usernameInput" placeholder="Your username">
+            <button id="startTestBtn">Start Test</button>
+            
+            <div class="admin-login">
+                <button id="adminLoginBtn">Admin Login</button>
+            </div>
+        </div>
+        
+        <!-- Flashcard Test Section -->
+        <div class="flashcard-section hidden" id="testSection">
+            <div class="progress">
+                Card <span id="currentCard">1</span> of <span id="totalCards">10</span>
+            </div>
+            
+            <div class="flashcard">
+                <div class="card" id="flashcard">
+                    <div class="card-face card-front" id="cardFront"></div>
+                    <div class="card-face card-back" id="cardBack"></div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="correct-btn" id="correctBtn">✅ Correct</button>
+                <button class="incorrect-btn" id="incorrectBtn">❌ Incorrect</button>
+            </div>
+        </div>
+        
+        <!-- Results Section -->
+        <div class="results-section hidden" id="resultsSection">
+            <h2>Your Results</h2>
+            <p>Username: <span id="resultsUsername"></span></p>
+            <p>Score: <span id="resultsScore"></span></p>
+            <p>Missed Terms: <span id="missedTerms"></span></p>
+            <button id="retryBtn">Retry Test</button>
+            <button id="viewAllResultsBtn">View All Results (Admin)</button>
+        </div>
+        
+        <!-- Admin Section -->
+        <div class="admin-section hidden" id="adminSection">
+            <h2>Admin Dashboard</h2>
+            <div class="admin-login">
+                <input type="password" id="adminPasswordInput" placeholder="Enter admin password">
+                <button id="adminAccessBtn">Access Results</button>
+            </div>
+            
+            <div id="adminResults" class="hidden">
+                <h3>All Test Results</h3>
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Score</th>
+                            <th>Date</th>
+                            <th>Missed Terms</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsTableBody">
+                        <!-- Results will be populated here -->
+                    </tbody>
+                </table>
+                <button id="exportResultsBtn">Export as CSV</button>
+                <button id="backToTestBtn">Back to Test</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/flashcards.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
